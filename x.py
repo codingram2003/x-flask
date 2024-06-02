@@ -34,7 +34,7 @@ def path():
 # ...
  
     # starts a new chrome session
-    chrome = webdriver.Chrome() 
+    chrome = webdriver.Chrome(options=options) 
     chrome.implicitly_wait(6)
 
 
