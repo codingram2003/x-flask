@@ -1,4 +1,5 @@
 
+import random
 from bs4 import BeautifulSoup as bs
 import selenium.common.exceptions
 from selenium import webdriver
@@ -18,10 +19,23 @@ url = "https://x.com/i/flow/login"
 
 def path():  
     global chrome
+    # Set up the Selenium WebDriver
+    options = webdriver.ChromeOptions()
+    options.add_argument('--no-sandbox')
+    options.add_argument('--headless')
+    options.add_argument('--ignore-certificate-errors')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--disable-extensions')
+    options.add_argument('--disable-gpu')
+
+
+
+
+# ...
  
     # starts a new chrome session
-    chrome = webdriver.Chrome() 
-
+    chrome = webdriver.Chrome(options=options) 
+    chrome.implicitly_wait(6)
 
 
 def url_name(url):  
