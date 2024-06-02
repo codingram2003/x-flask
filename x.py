@@ -20,13 +20,13 @@ url = "https://x.com/i/flow/login"
 def path():  
     global chrome
     # Set up the Selenium WebDriver
-    options = webdriver.ChromeOptions()
+    ''' options = webdriver.ChromeOptions()
     options.add_argument('--no-sandbox')
     options.add_argument('--headless')
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--disable-extensions')
-    options.add_argument('--disable-gpu')
+    options.add_argument('--disable-gpu') '''
 
 
 
@@ -34,7 +34,7 @@ def path():
 # ...
  
     # starts a new chrome session
-    chrome = webdriver.Chrome(options=options) 
+    chrome = webdriver.Chrome() 
     chrome.implicitly_wait(6)
 
 
@@ -45,7 +45,7 @@ def url_name(url):
     # webdriver will wait for 4 sec before throwing a  
     # NoSuchElement exception so that the element 
     # is detected and not skipped.
-    time.sleep(4) 
+    time.sleep(10) 
 
 def login(username, your_password):
 	
