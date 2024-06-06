@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Details</title>
+</head>
+<body>
+    
+
+<a href="{{url_for('home')}}" >Go back home</a>
+
+<div class="rows">
+    <div class="item">Date-Time</div>
+    <div class="item">Topic</div>
+<div class="item">Name</div>
+<div class="item">Posts</div>
+</div >
+{%for i in show %}
+
+{% for j in i['Trends']%}
+
+<div class="rows">
+    <div class="item">{{i['Date-Time']}}</div>
+    <div class="item">{{j['Topic']}}</div>
+<div class="item">{{j['Name']}}</div>
+<div class="item">{{j['Posts']}}</div>
+</div >
+{% endfor %}
+{% endfor %}
+
+
+
+</body>
+</html>

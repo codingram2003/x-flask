@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
     <title>X-Flask</title>
 </head>
 <body>
-    The home page!
-    {{data}}
+   <div class="app">
+    <h1>The home page!</h1>
+    
+    <br>
+    The login for the X doesn't work when deployed on a server. So I've added video of it running on the localhost. 
+    Getting the data from the Mongo DB works.
+    <br>
+    <br>
+    <br>
+
+<a href="{{url_for('details')}}" >get Details</a>
+<br>
+
+
+<br>
+<a href="{{url_for('run')}}" >run script</a>
+
+<br>
+<br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5RJKqk3N4gA?si=dbSZ7hFUMQ5BhPB9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+
+   </div>
 </body>
 
 

@@ -1,0 +1,24 @@
+* {
+    background-color: beige;
+}
+
+
+
+.rows {
+    display: grid;
+    grid-template-columns: 15vw 15vw 15vw 15vw ;
+}
+
+.item {
+    background-color: #80cbc4;
+    border: 1px solid #000000;
+    padding: 20px;
+    text-align: center;
+  }
+
+.app {
+    width: 90vw;
+    margin: 0 auto;
+    text-align: center;
+
+}

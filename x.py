@@ -6,6 +6,7 @@ from selenium import webdriver
 import time
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+import db
  
 print("enter username")
 username = "testytest2003"
@@ -20,13 +21,13 @@ url = "https://x.com/i/flow/login"
 def path():  
     global chrome
     # Set up the Selenium WebDriver
-    options = webdriver.ChromeOptions()
+    '''options = webdriver.ChromeOptions()
     options.add_argument('--no-sandbox')
     options.add_argument('--headless')
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--disable-extensions')
-    options.add_argument('--disable-gpu') 
+    options.add_argument('--disable-gpu') '''
 
 
 
@@ -34,7 +35,7 @@ def path():
 # ...
  
     # starts a new chrome session
-    chrome = webdriver.Chrome(options=options) 
+    chrome = webdriver.Chrome() 
     chrome.implicitly_wait(6)
 
 
@@ -94,13 +95,14 @@ def analysis(text):
             i+=1
             row.append(text[i])
             i+=1
-            while 'posts' not in text[i] and i < len(text) :
+            while i < len(text) and 'posts' not in text[i]  :
                 i+=1
-            if 'posts' in text[i]:
+            if i < len(text) and 'posts' in text[i]:
                 row.append(text[i])
                 data.append(row)
 
         i+=1
+    db.main(data)
 
     return data
 
