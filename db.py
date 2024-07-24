@@ -4,7 +4,7 @@ from pymongo.server_api import ServerApi
 import datetime
 import pytz
 
-uri = "mongodb+srv://root:root@cluster0.erzx9gg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+uri = "mongodb+srv://user:pass@clusterid.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 # Create a new client and connect to the server
 
@@ -28,13 +28,6 @@ def main(data):
     collection = database["topthings"]
 
     current_time = datetime.datetime.now(pytz.timezone('Asia/Kolkata'))
-
-
-    data =  [['Trending in India', '#NEET_परीक्षा_परिणाम', '194K posts'], ['Politics · Trending', '#PrimeMinister', '25.6K posts'], ['Trending in India', '#MissYou', '1,283 posts']] 
-    datatoupload = {
-    "Date-Time": str(current_time.day) + "-" + str(current_time.month) + "-" + str(current_time.year) + " " + str(current_time.hour) + ":" + str(current_time.minute),
-    "Trends": []
-    }
     for i in data:
         temp = {
             "Topic": i[0],
